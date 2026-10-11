@@ -41,6 +41,10 @@ def generateStubs(sysroot, outfile, target):
         # Exported by libSystem, but declared in headers that are not part of
         # this minimal SDK:
         '_ioctl',           # <sys/ioctl.h>
+        # <sys/socket.h>, for Go's syscall package:
+        '_accept', '_bind', '_connect', '_getpeername', '_getsockname',
+        '_getsockopt', '_listen', '_recvfrom', '_recvmsg', '_sendmsg',
+        '_sendto', '_setsockopt', '_shutdown', '_socket', '_socketpair',
         '___sincos_stret', '___sincosf_stret'  # newer <math.h>; called by LLVM-generated code
     }
 
